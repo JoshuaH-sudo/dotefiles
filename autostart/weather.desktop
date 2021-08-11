@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=gnome-terminal --geometry=125x40+460+0 -- bash -c 'curl wttr.in/Canberra; read line' 
+Hidden=false
+X-GNOME-Autostart-enabled=true
+Name=Weather
+Comment=

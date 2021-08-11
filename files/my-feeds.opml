@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+    <head>
+        <title>QuiteRSS</title>
+        <dateModified>Sat Jun 19 21:27:30 2021</dateModified>
+    </head>
+    <body>
+        <outline text="QuiteRSS" type="rss" htmlUrl="http://quiterss.org/en/frontpage" xmlUrl="https://quiterss.org/en/rss.xml"/>
+        <outline text="ich iel - selbsties der seele" type="rss" htmlUrl="https://www.reddit.com/r/ich_iel/" xmlUrl="https://www.reddit.com/r/ich_iel/.rss"/>
+        <outline text="Hacker News" type="rss" htmlUrl="https://news.ycombinator.com/" xmlUrl="https://news.ycombinator.com/rss"/>
+        <outline text="Wirtschaft - FAZ.NET" type="rss" htmlUrl="https://www.faz.net/aktuell/wirtschaft/" xmlUrl="https://www.faz.net/rss/aktuell/wirtschaft/"/>
+        <outline text="Aktuell - FAZ.NET" type="rss" htmlUrl="https://www.faz.net/aktuell/" xmlUrl="https://www.faz.net/rss/aktuell/"/>
+    </body>
+</opml>

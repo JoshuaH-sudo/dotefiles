@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/conky
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_AU]=cool-conky-stats
+Name=cool-conky-stats
+Comment[en_AU]=
+Comment=
