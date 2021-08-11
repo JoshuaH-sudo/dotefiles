@@ -9,18 +9,11 @@
     ~/.vimrc: ./files/.vimrc
     ~/.zshrc: ./files/.zshrc
     ~/.conkyrc: ./files/.conkyrc
+    ~/.config/autostart/conky.desktop:
+      create: true
+      path: ./autostart/conky.desktop
 
-- shell:
-  - [git submodule update --init --recursive, Installing submodules]
-  - chsh -s $(which zsh)
-  - [chsh -s $(which zsh), Making zsh the default shell]
-  -
-    command: read var && echo Your variable is $var
-    stdin: true
-    stdout: true
-    description: Reading and printing variable
-    quiet: true
-  -
-    command: read fail
-    stderr: true
+    ~/.config/autostart/weather.desktop:
+      create: true
+      path: ./autostart/weather.desktop
 
