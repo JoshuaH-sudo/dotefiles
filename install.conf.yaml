@@ -5,7 +5,8 @@
 - clean: ['~']
 
 - link:
-    #~/.tmux.conf: tmux.conf
+  #~/.tmux.conf: tmux.conf
+    ~/Documents: ./files/my-feeds.opml
     ~/.vimrc: ./files/.vimrc
     ~/.zshrc: ./files/.zshrc
     ~/.conkyrc: ./files/.conkyrc
