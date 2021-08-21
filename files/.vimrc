@@ -14,7 +14,15 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript' 
 Plug 'morhetz/gruvbox'
+Plug 'reedes/vim-pencil'
+Plug 'LunarWatcher/auto-pairs', { 'tag': '*' }
+Plug 'preservim/vim-lexical'
+Plug 'dbmrq/vim-ditto'
+Plug 'rhysd/vim-grammarous'
 call plug#end()
+set encoding=UTF-8
+
+set spell spelllang=en_us
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 nmap <leader>f  <Plug>(coc-format-selected)
@@ -33,10 +41,10 @@ nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>
 autocmd vimenter * ++nested colorscheme gruvbox
 set background=dark
 
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
+nmap <silent> <C-k> :wincmd k<CR>
+nmap <silent> <C-j> :wincmd j<CR>
+nmap <silent> <C-h> :wincmd h<CR>
+nmap <silent> <C-l> :wincmd l<CR>
 
 syntax on
 set tabstop=2
@@ -52,7 +60,7 @@ set foldenable
 nnoremap <space> za
 set foldmethod=indent
 set foldlevelstart=10
-nnoremap <F5> mzgggqG`z
+" nnoremap <F5> mzgggqG`z
 
 set number
 
@@ -72,3 +80,70 @@ inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
+
+" open terminal below all splits
+cabbrev term bo term 
+set termwinsize=10x0
+nmap <Leader>t :term
+
+nmap <Leader>l :nohl
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+set nocompatible
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd call pencil#init()
+  autocmd FileType text         call pencil#init()
+  autocmd FileType txt         call pencil#init()
+augroup END
+
+let g:lexical#spell_key = '<leader>s'
+let g:lexical#spell = 1         " 0=disabled, 1=enabled
+let g:lexical#dictionary_key = '<leader>k'
+
+augroup lexical
+  autocmd!
+  autocmd FileType markdown,mkd call lexical#init({ 'spell': 1 })
+  autocmd FileType txt call lexical#init({ 'spell': 1 })
+  autocmd FileType text call lexical#init({ 'spell': 1 })
+augroup END
+
+" Use autocmds to check your text automatically and keep the highlighting
+" up to date (easier):
+au FileType markdown,text,tex DittoOn  " Turn on Ditto's autocmds
+nmap <leader>di <Plug>ToggleDitto      " Turn Ditto on and off
+
+" If you don't want the autocmds, you can also use an operator to check
+" specific parts of your text:
+" vmap <leader>d <Plug>Ditto	       " Call Ditto on visual selection
+" nmap <leader>d <Plug>Ditto	       " Call Ditto on operator movement
+
+nmap =d <Plug>DittoNext                " Jump to the next word
+nmap -d <Plug>DittoPrev                " Jump to the previous word
+nmap +d <Plug>DittoGood                " Ignore the word under the cursor
+nmap _d <Plug>DittoBad                 " Stop ignoring the word under the cursor
+nmap ]d <Plug>DittoMore                " Show the next matches
+nmap [d <Plug>DittoLess                " Show the previous matches
+

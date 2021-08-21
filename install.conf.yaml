@@ -8,6 +8,7 @@
   #~/.tmux.conf: tmux.conf
     ~/Documents: ./files/my-feeds.opml
     ~/.vimrc: ./files/.vimrc
+    ~/.bashrc: ./files/.bashrc
     ~/.zshrc: ./files/.zshrc
     ~/.conkyrc: ./files/.conkyrc
     ~/.config/autostart/conky.desktop:

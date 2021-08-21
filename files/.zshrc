@@ -103,3 +103,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias gs="git status"
+alias gl="git log"
+alias gcl="git add . && git commit -a -m 'lazy commit: things changed'"
+alias gp="git push"
