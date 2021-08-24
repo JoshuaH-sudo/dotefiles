@@ -104,6 +104,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gs="git status"
-alias gl="git log"
+alias gl1="git log --graph --decorate --oneline"
+alias gl="git log --graph --decorate"
 alias gcl="git add . && git commit -a -m 'lazy commit: things changed'"
 alias gp="git push"
+alias gcam="git commit -a -m "
+
+alias cdh="cd ~/"
+alias srm='mv --verbose -f --backup=numbered --target-directory ~/.Trash/'
