@@ -19,10 +19,14 @@ Plug 'LunarWatcher/auto-pairs', { 'tag': '*' }
 Plug 'preservim/vim-lexical'
 Plug 'dbmrq/vim-ditto'
 Plug 'rhysd/vim-grammarous'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 set encoding=UTF-8
 
 set spell spelllang=en_us
+
+cabb W w
+cabb Q q
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 nmap <leader>f  <Plug>(coc-format-selected)
