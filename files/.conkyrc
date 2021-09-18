@@ -80,6 +80,7 @@ ${top name 9} $alignr ${top pid 9} ${top cpu 9}% ${top mem 9}%
 ${top name 10} $alignr ${top pid 10} ${top cpu 10}% ${top mem 10}%
 
 ${font sans-serif:bold:size=10}RSS FEEDS ${hr 2}
+${font sans-serif:normal:size=8} 
 ${execi 300 ~/custom-scripts/conky-rss.sh}
 ]];
 
