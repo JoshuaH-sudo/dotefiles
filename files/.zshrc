@@ -112,3 +112,4 @@ alias gcam="git commit -a -m "
 
 alias cdh="cd ~/"
 alias srm='mv --verbose -f --backup=numbered --target-directory ~/.Trash/'
+alias wth="curl wttr.in/Canberra"

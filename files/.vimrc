@@ -34,22 +34,22 @@ nmap <leader>f  <Plug>(coc-format-selected)
 filetype plugin on
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
+"nert tree shortcuts"
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
-" Start NERDTree and put the cursor back in the other window.
-" autocmd VimEnter * NERDTree | wincmd p
-nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>
 
 autocmd vimenter * ++nested colorscheme gruvbox
 set background=dark
 
+"move betten terminals
 nmap <silent> <C-k> :wincmd k<CR>
 nmap <silent> <C-j> :wincmd j<CR>
 nmap <silent> <C-h> :wincmd h<CR>
 nmap <silent> <C-l> :wincmd l<CR>
 
+"terminal text settings
 syntax on
 set tabstop=2
 set shiftwidth=2
@@ -64,20 +64,33 @@ set foldenable
 nnoremap <space> za
 set foldmethod=indent
 set foldlevelstart=10
-" nnoremap <F5> mzgggqG`z
 
+"hybrid number lines
 set number
-
 augroup numbertoggle
   autocmd!
 	autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
 	autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
 augroup END
 
+"search
+vnoremap / /\v
+nnoremap / /\v
+
+"resize window
+nmap _ :vertical res-5<CR>
+nmap - :vertical res+5<CR>
+nmap + :res-5<CR>
+nmap = :res+5<CR>
+
+"remap esc key 
+inoremap <C-[> <ESC>
+
 "ubuntu keycode issues"
 map <Esc>k <A-k>
 map <Esc>j <A-j>
 
+"move lines
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 inoremap <A-j> <Esc>:m .+1<CR>==gi
@@ -90,7 +103,10 @@ cabbrev term bo term
 set termwinsize=10x0
 nmap <Leader>t :term
 
+"misc
 nmap <Leader>l :nohl
+
+"coc settings
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
@@ -115,6 +131,7 @@ function! s:show_documentation()
   endif
 endfunction
 
+"writeing config
 set nocompatible
 augroup pencil
   autocmd!
