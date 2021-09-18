@@ -12,7 +12,7 @@
     ~/.zshrc: ./files/.zshrc
     ~/.conkyrc: ./files/.conkyrc
 
-    ~/custom-scripts/conky.rss.sh:
+    ~/custom-scripts/conky-rss.sh:
       create: true
       path: ./scripts/conky-rss.sh
 
