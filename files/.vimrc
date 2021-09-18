@@ -84,7 +84,7 @@ nmap + :res-5<CR>
 nmap = :res+5<CR>
 
 "remap esc key 
-inoremap <C-[> <ESC>
+"inoremap <C-[> <ESC>
 
 "ubuntu keycode issues"
 map <Esc>k <A-k>
