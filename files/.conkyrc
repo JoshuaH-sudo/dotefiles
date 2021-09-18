@@ -80,4 +80,4 @@ ${top name 9} $alignr ${top pid 9} ${top cpu 9}% ${top mem 9}%
 ${top name 10} $alignr ${top pid 10} ${top cpu 10}% ${top mem 10}%
 ]];
 
-${execi [time] ~/dotfiles/scripts/conky-rss.sh}
+${execi 300 ~/custom-scripts/conky-rss.sh}

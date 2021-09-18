@@ -11,6 +11,11 @@
     ~/.bashrc: ./files/.bashrc
     ~/.zshrc: ./files/.zshrc
     ~/.conkyrc: ./files/.conkyrc
+
+    ~/custom-scripts/conky.rss.sh:
+      create: true
+      path: ./scripts/conky-rss.sh
+
     ~/.config/autostart/conky.desktop:
       create: true
       path: ./autostart/conky.desktop
