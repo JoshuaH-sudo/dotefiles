@@ -24,7 +24,7 @@ LINES=6 #Number of headlines
 EXEC="/usr/bin/curl -s" #Path to curl
 
 #Work Start
-echo "Hacker News \n "
+echo "Hacker News"
 $EXEC $URI | xmllint --format -| grep title |\
 sed -e :a -e 's/<[^>]*>//g;/</N' |\
 sed -e 's/[ \t]*//' |\
