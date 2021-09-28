@@ -4,6 +4,13 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'ycm-core/YouCompleteMe'
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
@@ -20,10 +27,19 @@ Plug 'preservim/vim-lexical'
 Plug 'dbmrq/vim-ditto'
 Plug 'rhysd/vim-grammarous'
 Plug 'tpope/vim-fugitive'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 call plug#end()
 set encoding=UTF-8
 
-set spell spelllang=en_us
+"set spell spelllang=en_us
+map <F5> :setlocal spell! spelllang=en_us<CR>
+
+
+"snippets"
+let g:UltiSnipsExpandTrigger="<tab>"
+" list all snippets for current filetype
+let g:UltiSnipsListSnippets="<c-l>"
 
 cabb W w
 cabb Q q
@@ -40,10 +56,11 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
+let g:gruvbox_guisp_fallback = "bg"
 autocmd vimenter * ++nested colorscheme gruvbox
 set background=dark
 
-"move betten terminals
+"move between terminals
 nmap <silent> <C-k> :wincmd k<CR>
 nmap <silent> <C-j> :wincmd j<CR>
 nmap <silent> <C-h> :wincmd h<CR>
