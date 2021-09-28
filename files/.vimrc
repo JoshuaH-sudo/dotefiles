@@ -29,12 +29,16 @@ Plug 'rhysd/vim-grammarous'
 Plug 'tpope/vim-fugitive'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'mlaursen/vim-react-snippets'
 call plug#end()
 set encoding=UTF-8
 
-"set spell spelllang=en_us
+"]s – Jump to the next misspelled word
+"[s – Jump to the previous misspelled word
+"z= – Bring up the suggested replacements
+"zg – Good word: Add the word under the cursor to the dictionary
+"zw – Woops! Undo and remove the word from the dictionary
 map <F5> :setlocal spell! spelllang=en_us<CR>
-
 
 "snippets"
 let g:UltiSnipsExpandTrigger="<tab>"
