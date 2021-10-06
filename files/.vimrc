@@ -30,8 +30,14 @@ Plug 'tpope/vim-fugitive'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'mlaursen/vim-react-snippets'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 call plug#end()
 set encoding=UTF-8
+
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 "]s – Jump to the next misspelled word
 "[s – Jump to the previous misspelled word
@@ -49,7 +55,7 @@ cabb W w
 cabb Q q
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-nmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(Prettier)
 
 filetype plugin on
 autocmd FileType json syntax match Comment +\/\/.\+$+
