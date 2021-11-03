@@ -171,8 +171,8 @@ if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()
 else
   inoremap <silent><expr> <c-@> coc#refresh()
-endif
 
+endif
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
@@ -296,3 +296,8 @@ function! s:check_back_space() abort
 endfunction
 
 let g:coc_snippet_next = '<tab>'
+
+"CocInstall coc-react-refactor
+xmap <leader>ra  <Plug>(coc-codeaction-selected)
+nmap <leader>ra  <Plug>(coc-codeaction-selected)
+
